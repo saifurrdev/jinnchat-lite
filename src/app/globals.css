@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: pan-x pan-y;
+}
+
+body {
+  @apply font-tg antialiased text-[15px] text-zinc-100 bg-black flex flex-col;
+}
+
+/* Force high-quality emojis */
+.emoji-tg {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+}
+
+/* 2026 Premium Black Theme Background */
+.lobby-bg {
+  background: #000000;
+}
+
+/* Structured dark chat wallpaper: deep gradient + subtle dot grid + ambient glow */
+.tg-wallpaper-dark {
+  background-color: #07070a;
+  background-image:
+    radial-gradient(circle at 18% 12%, rgba(118, 106, 200, 0.12) 0%, transparent 38%),
+    radial-gradient(circle at 85% 88%, rgba(64, 120, 160, 0.1) 0%, transparent 40%),
+    radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 22px 22px;
+  background-position: 0 0, 0 0, 0 0;
+}
+
+/* thin scrollbar like telegram web */
+.tg-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.tg-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+.tg-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.tg-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* typing dots */
+.typing-dot {
+  animation: typingBlink 1.4s infinite both;
+}
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+@keyframes typingBlink {
+  0%,
+  60%,
+  100% {
+    opacity: 0.25;
+  }
+  30% {
+    opacity: 1;
+  }
+}
